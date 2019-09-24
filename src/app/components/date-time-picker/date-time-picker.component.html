@@ -1,0 +1,12 @@
+<!-- <p>date-time-picker works!</p> -->
+<div>
+  <div>
+    <angular2-date-picker
+      (onDateSelect)="onDateSelect($event)"
+      [(ngModel)]="date"
+      [settings]="settings"
+    ></angular2-date-picker>
+  </div>
+
+  <div *ngIf="showPicked">{{ dateTime | date: 'medium' }}</div>
+</div>

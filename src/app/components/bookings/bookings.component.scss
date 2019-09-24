@@ -1,0 +1,49 @@
+.images {
+  display: flex;
+}
+
+.room {
+  flex-grow: 1;
+  width: auto;
+  max-width: 33vw;
+  max-height: 100vh;
+  height: auto;
+  overflow: hidden;
+}
+
+.room img {
+  transition: 0.7s ease;
+}
+
+.room:hover img {
+  filter: blur(2px) brightness(50%);
+}
+
+.room :not(img) {
+  position: absolute;
+  z-index: 1;
+  top: 30%;
+  width: 33%;
+  text-align: center;
+  opacity: 0;
+  transition: 0.3s;
+}
+
+.room a {
+  top: 50%;
+  transition: 0.1s ease 1 forwards;
+  font-size: 26px;
+  text-transform: uppercase;
+  text-decoration: none;
+  border-bottom: 2px solid #32c5f3;
+  color: white;
+}
+
+.room a:hover {
+  color: #cccccc;
+  font-size: 28px;
+}
+
+.room:hover :not(img) {
+  opacity: 1;
+}
