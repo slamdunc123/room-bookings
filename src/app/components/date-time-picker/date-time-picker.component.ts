@@ -1,5 +1,7 @@
 import { Component, OnInit } from '@angular/core';
 
+import * as moment from 'moment';
+
 @Component({
   selector: 'app-date-time-picker',
   templateUrl: './date-time-picker.component.html',
@@ -13,15 +15,34 @@ export class DateTimePickerComponent implements OnInit {
     format: 'dd-MM-yyyy',
     defaultOpen: true
   };
-  dateTime: Date = new Date();
+  // dateTime: Date = new Date();
   showPicked = false;
+  minDate = moment(new Date()).format('YYYY-MM-DD');
+  maxDate = '2019-09-30';
+  user: null;
+  bookingDate: Date = new Date();
+  bookingTime: null;
 
-  onDateSelect($event) {
-    console.log($event);
-    this.dateTime = $event;
-    console.log(this.dateTime);
+  // onDateSelect(e) {
+  //   console.log(e);
+  //   this.dateTime = e;
+  //   console.log(this.dateTime);
+  //   this.showPicked = true;
+  //   this.test();
+  // }
+
+  onSubmit = booking => {
+    // e.preventDefault();
+    console.log(booking.user);
+    console.log(booking.date);
+    console.log(booking.time);
+
+    this.user = booking.user;
+    this.bookingDate = booking.date;
+    this.bookingTime = booking.time;
     this.showPicked = true;
-  }
+  };
+
   constructor() {}
 
   ngOnInit() {}
