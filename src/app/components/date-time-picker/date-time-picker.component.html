@@ -1,39 +1,24 @@
 <!-- <p>date-time-picker works!</p> -->
 <div>
-  <!-- <div>
-    <angular2-date-picker
-      (onDateSelect)="onDateSelect($event)"
-      [(ngModel)]="date"
-      [settings]="settings"
-    ></angular2-date-picker>
-  </div> -->
-
-  <form #userlogin="ngForm" (ngSubmit)="onSubmit(userlogin.value)">
-    <!-- <input type="text" name="emailid" placeholder="emailid" ngModel />
-    <br />
-    <input type="password" name="passwd" placeholder="passwd" ngModel />
-    <br /> -->
+  <form #roombooking="ngForm" (ngSubmit)="onSubmit(roombooking.value)">
+    <label for="user">User: </label>
     <select name="user" ngModel>
       <option value="" selected disabled hidden>Select user</option>
-      <option value="Dan">Dan</option>
-      <option value="Scott">Scott</option>
-      <option value="Sam">Sam</option>
+
+      <option *ngFor="let user of users" [value]="user.name">{{
+        user.name
+      }}</option>
     </select>
     <br />
+    <label for="date">Date: </label>
     <input type="date" name="date" [min]="minDate" [max]="maxDate" ngModel />
     <br />
+    <label for="time">Time: </label>
     <select name="time" ngModel>
       <option value="" selected disabled hidden>Select Time</option>
-      <option value="08:00-09:00">09:00-10:00</option>
-      <option value="09:00-10:00">09:00-10:00</option>
-      <option value="10:00-11:00">10:00-11:00</option>
-      <option value="11:00-12:00">11:00-12:00</option>
-      <option value="12:00-13:00">11:00-12:00</option>
-      <option value="13:00-14:00">11:00-12:00</option>
-      <option value="14:00-15:00">11:00-12:00</option>
-      <option value="15:00-16:00">11:00-12:00</option>
-      <option value="16:00-17:00">11:00-12:00</option>
-      <option value="17:00-18:00">11:00-12:00</option>
+      <option *ngFor="let time of times" [value]="time.slot">{{
+        time.slot
+      }}</option>
     </select>
     <br />
     <input type="submit" value="submit" />
@@ -42,16 +27,4 @@
   <div *ngIf="showPicked">
     {{ user }} - {{ bookingDate }} - {{ bookingTime }}
   </div>
-
-  <!-- <form (ngSubmit)="onSubmit($event)">
-    <select name="user">
-      <option value="volvo">Dan</option>
-      <option value="saab">Scott</option>
-      <option value="fiat">Sam</option>
-    </select>
-    <input type="date" name="date" />
-    <input type="submit" />
-  </form> -->
-
-  <!-- <div *ngIf="showPicked">{{ dateTime | date: 'medium' }}</div> -->
 </div>

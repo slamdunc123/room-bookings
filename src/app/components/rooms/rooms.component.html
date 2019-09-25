@@ -1,2 +1,13 @@
-<p>rooms works!</p>
-<router-outlet></router-outlet>
+<!-- <p>rooms works!</p> -->
+
+<div class="room-container">
+  <div class="room-container__back-button">
+    <a [routerLink]="['/bookings']" routerLinkActive="active">Back</a>
+  </div>
+  <br />
+  <h2>{{ room.name }}</h2>
+  <br />
+  <div class="room-container__date-time-picker">
+    <app-date-time-picker></app-date-time-picker>
+  </div>
+</div>
