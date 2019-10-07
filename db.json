@@ -1,28 +1,106 @@
 {
   "users": [
-    { "id": 1, "title": "front-end dev", "name": "Dan" },
-    { "id": 2, "title": "back-end dev", "name": "Carl" },
-    { "id": 3, "title": "front-end dev", "name": "Scott" },
-    { "id": 4, "title": "back-end dev", "name": "Kasim" },
-    { "id": 5, "title": "front-end dev", "name": "Marcin" },
-    { "id": 6, "title": "front-end dev", "name": "Dunc" }
+    {
+      "id": 1,
+      "title": "front-end dev",
+      "name": "Dan"
+    },
+    {
+      "id": 2,
+      "title": "back-end dev",
+      "name": "Carl"
+    },
+    {
+      "id": 3,
+      "title": "front-end dev",
+      "name": "Scott"
+    },
+    {
+      "id": 4,
+      "title": "back-end dev",
+      "name": "Kasim"
+    },
+    {
+      "id": 5,
+      "title": "front-end dev",
+      "name": "Marcin"
+    },
+    {
+      "id": 6,
+      "title": "front-end dev",
+      "name": "Dunc"
+    }
   ],
-
   "times": [
-    { "id": 1, "slot": "08:00-09:00" },
-    { "id": 2, "slot": "09:00-10:00" },
-    { "id": 3, "slot": "10:00-11:00" },
-    { "id": 4, "slot": "11:00-12:00" },
-    { "id": 5, "slot": "12:00-13:00" },
-    { "id": 6, "slot": "13:00-14:00" },
-    { "id": 7, "slot": "14:00-15:00" },
-    { "id": 8, "slot": "15:00-16:00" },
-    { "id": 9, "slot": "16:00-17:00" },
-    { "id": 10, "slot": "17:00-18:00" }
+    {
+      "id": 1,
+      "slot": "08:00-09:00"
+    },
+    {
+      "id": 2,
+      "slot": "09:00-10:00"
+    },
+    {
+      "id": 3,
+      "slot": "10:00-11:00"
+    },
+    {
+      "id": 4,
+      "slot": "11:00-12:00"
+    },
+    {
+      "id": 5,
+      "slot": "12:00-13:00"
+    },
+    {
+      "id": 6,
+      "slot": "13:00-14:00"
+    },
+    {
+      "id": 7,
+      "slot": "14:00-15:00"
+    },
+    {
+      "id": 8,
+      "slot": "15:00-16:00"
+    },
+    {
+      "id": 9,
+      "slot": "16:00-17:00"
+    },
+    {
+      "id": 10,
+      "slot": "17:00-18:00"
+    }
   ],
   "rooms": [
-    { "id": 1, "name": "Board Room" },
-    { "id": 2, "name": "Green Room" },
-    { "id": 3, "name": "The Cave" }
+    {
+      "id": 1,
+      "name": "Board Room"
+    },
+    {
+      "id": 2,
+      "name": "Green Room"
+    },
+    {
+      "id": 3,
+      "name": "The Cave"
+    }
+  ],
+  "bookings": [
+    {
+      "room_id": "1",
+      "user": "Carl",
+      "date": "2019-10-08",
+      "time": "09:00-10:00",
+      "id": 1
+    },
+    {
+      "room_id": "1",
+      "user": "Scott",
+      "date": "2019-10-09",
+      "time": "12:00-13:00",
+      "id": 2
+    }
   ]
 }

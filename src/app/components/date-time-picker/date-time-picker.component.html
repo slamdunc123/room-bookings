@@ -27,4 +27,7 @@
   <div *ngIf="showPicked">
     {{ user }} - {{ bookingDate }} - {{ bookingTime }}
   </div>
+  <div *ngFor="let booking of bookings">
+    {{ booking.date }} - {{ booking.time }} - {{ booking.user }}
+  </div>
 </div>

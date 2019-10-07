@@ -18,4 +18,12 @@ export class DataService {
   getTimes() {
     return this.http.get('http://localhost:5000/times');
   }
+
+  getBookings(roomId) {
+    return this.http.get('http://localhost:5000/bookings?room_id=' + roomId);
+  }
+
+  createBooking(booking) {
+    return this.http.post('http://localhost:5000/bookings', booking);
+  }
 }
