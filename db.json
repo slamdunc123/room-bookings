@@ -89,18 +89,46 @@
   ],
   "bookings": [
     {
-      "room_id": "1",
       "user": "Carl",
       "date": "2019-10-08",
       "time": "09:00-10:00",
+      "roomId": 1,
       "id": 1
     },
     {
-      "room_id": "1",
-      "user": "Scott",
-      "date": "2019-10-09",
-      "time": "12:00-13:00",
+      "user": "Kasim",
+      "date": "2019-10-08",
+      "time": "10:00-11:00",
+      "roomId": 1,
       "id": 2
+    },
+    {
+      "user": "Marcin",
+      "date": "2019-10-17",
+      "time": "14:00-15:00",
+      "roomId": 2,
+      "id": 3
+    },
+    {
+      "user": "Scott",
+      "date": "2019-10-24",
+      "time": "14:00-15:00",
+      "roomId": 3,
+      "id": 4
+    },
+    {
+      "user": "Marcin",
+      "date": "2019-10-16",
+      "time": "12:00-13:00",
+      "roomId": 3,
+      "id": 5
+    },
+    {
+      "user": "Dan",
+      "date": "2019-10-16",
+      "time": "11:00-12:00",
+      "roomId": 3,
+      "id": 6
     }
   ]
 }

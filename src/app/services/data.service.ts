@@ -20,7 +20,7 @@ export class DataService {
   }
 
   getBookings(roomId) {
-    return this.http.get('http://localhost:5000/bookings?room_id=' + roomId);
+    return this.http.get('http://localhost:5000/bookings?roomId=' + roomId);
   }
 
   createBooking(booking) {
