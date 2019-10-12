@@ -1,6 +1,6 @@
 <!-- <p>date-time-picker works!</p> -->
 <div class="booking-form">
-  <form #roombooking="ngForm" (ngSubmit)="onSubmit(roombooking.value)">
+  <form #roombooking="ngForm" (ngSubmit)="onSubmit(roombooking.value, $event)">
     <div class="form-group">
       <label for="user">User: </label>
       <select class="form-control" name="user" ngModel>
@@ -33,10 +33,15 @@
     </div>
     <input type="hidden" name="roomId" [(ngModel)]="roomId" />
     <button class="btn btn-primary" type="submit" value="submit">Submit</button>
+    <!-- <input class="btn btn-primary" type="submit" value="submit" /> -->
   </form>
 
   <div *ngIf="showPicked">
     {{ user }} - {{ bookingDate }} - {{ bookingTime }}
+    <button class="btn btn-info" (click)="onConfirm()">Confirm</button>
+    <button class="btn btn-info" (click)="onCancel()">
+      Cancel
+    </button>
   </div>
   <table class="table table-bordered table-stiped">
     <thead class="thead-dark">

@@ -1,19 +1,19 @@
-import { Component, OnInit } from '@angular/core';
-import { DataService } from 'src/app/services/data.service';
-import { ActivatedRoute } from '@angular/router';
-import { NgSwitchCase } from '@angular/common';
+import { Component, OnInit } from "@angular/core";
+import { DataService } from "src/app/services/data.service";
+import { ActivatedRoute } from "@angular/router";
+import { NgSwitchCase } from "@angular/common";
 
 @Component({
-  selector: 'app-rooms',
-  templateUrl: './rooms.component.html',
-  styleUrls: ['./rooms.component.scss'],
+  selector: "app-rooms",
+  templateUrl: "./rooms.component.html",
+  styleUrls: ["./rooms.component.scss"],
   providers: [DataService]
 })
 export class RoomsComponent implements OnInit {
   id: number;
   room: object = {
     id: null,
-    name: ''
+    name: ""
   };
   private sub: any;
 
@@ -36,6 +36,8 @@ export class RoomsComponent implements OnInit {
       case 1: {
         document.body.style.backgroundImage =
           "linear-gradient(rgba(255,255,255,.5), rgba(255,255,255,.5)), url('../../../assets/img/board.jpg')";
+        document.body.style.backgroundSize = "cover";
+        document.body.style.backgroundRepeat = "no-repeat";
         break;
       }
       case 2: {
@@ -49,7 +51,7 @@ export class RoomsComponent implements OnInit {
         break;
       }
       default: {
-        document.body.style.background = '#fff';
+        document.body.style.background = "#fff";
         break;
       }
     }

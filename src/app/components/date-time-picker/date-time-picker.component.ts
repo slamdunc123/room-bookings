@@ -1,27 +1,30 @@
-import { Component, OnInit } from '@angular/core';
+import { Component, OnInit, ViewChild } from "@angular/core";
+import { Location } from "@angular/common";
 
-import * as moment from 'moment';
-import { DataService } from '../../services/data.service';
-import { ActivatedRoute } from '@angular/router';
+import * as moment from "moment";
+import { DataService } from "../../services/data.service";
+import { ActivatedRoute } from "@angular/router";
+import { NgForm } from "@angular/forms";
 
 @Component({
-  selector: 'app-date-time-picker',
-  templateUrl: './date-time-picker.component.html',
-  styleUrls: ['./date-time-picker.component.scss'],
+  selector: "app-date-time-picker",
+  templateUrl: "./date-time-picker.component.html",
+  styleUrls: ["./date-time-picker.component.scss"],
   providers: [DataService]
 })
 export class DateTimePickerComponent implements OnInit {
+  @ViewChild("roombooking") form: NgForm;
   date: Date = new Date();
   settings = {
     bigBanner: true,
     timePicker: true,
-    format: 'dd-MM-yyyy',
+    format: "dd-MM-yyyy",
     defaultOpen: true
   };
   // dateTime: Date = new Date();
   showPicked = false;
-  minDate = moment(new Date()).format('YYYY-MM-DD');
-  maxDate = '2019-12-31';
+  minDate = moment(new Date()).format("YYYY-MM-DD");
+  maxDate = "2019-12-31";
   user: null;
   bookings: object = [];
   users: object = [];
@@ -30,6 +33,7 @@ export class DateTimePickerComponent implements OnInit {
   bookingTime: null;
   private sub: any;
   roomId: number;
+  booking: {};
 
   // onDateSelect(e) {
   //   console.log(e);
@@ -39,8 +43,8 @@ export class DateTimePickerComponent implements OnInit {
   //   this.test();
   // }
 
-  onSubmit = booking => {
-    // e.preventDefault();
+  onSubmit = (booking, $event) => {
+    $event.preventDefault();
     console.log(booking.user);
     console.log(booking.date);
     console.log(booking.time);
@@ -49,16 +53,39 @@ export class DateTimePickerComponent implements OnInit {
     this.bookingDate = booking.date;
     this.bookingTime = booking.time;
     this.showPicked = true;
-
-    this.dataService.createBooking(booking).subscribe(dataService => {
-      booking = dataService;
-      console.log(booking);
-    });
+    this.booking = booking;
+    console.log(booking);
   };
+
+  onConfirm() {
+    console.log("Confirm clicked");
+    this.dataService.createBooking(this.booking).subscribe(dataService => {
+      this.booking = dataService;
+      console.log(this.booking);
+    });
+    this.pageRefresh();
+  }
+
+  onCancel() {
+    console.log("Cancel clicked");
+    this.showPicked = false;
+    // this.user = null;
+    // this.bookingDate = new Date();
+    // this.bookingTime = null;
+    // this.booking = {};
+    // this.form.resetForm();
+
+    // TODO - check how to reset form onCancel and update table onConfirm without having to use pageRefresh
+  }
+
+  pageRefresh() {
+    location.reload();
+  }
 
   constructor(
     private dataService: DataService,
-    private route: ActivatedRoute
+    private route: ActivatedRoute,
+    private location: Location
   ) {}
 
   ngOnInit() {
