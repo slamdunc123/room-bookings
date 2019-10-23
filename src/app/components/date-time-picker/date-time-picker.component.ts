@@ -13,7 +13,7 @@ import { NgForm } from "@angular/forms";
   providers: [DataService]
 })
 export class DateTimePickerComponent implements OnInit {
-  @ViewChild("roombooking") form: NgForm;
+  // @ViewChild("roombooking") form: NgForm;
   date: Date = new Date();
   settings = {
     bigBanner: true,

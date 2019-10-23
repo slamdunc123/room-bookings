@@ -111,8 +111,9 @@ button {
 
 button:hover {
   background: #32c5f3;
-  padding: 15px 41px;
-  font-size: 12px;
+  // padding: 15px 41px;
+  // font-size: 12px;
+  transform: scale(1.1, 1.1);
 }
 
 @keyframes fadein {
