@@ -22,7 +22,7 @@
     "angular2-datetimepicker": "^1.1.1",
     "cors": "^2.8.5",
     "express": "^4.17.1",
-    "jquery": "^3.4.1",
+    "jquery": "^3.5.0",
     "moment": "^2.24.0",
     "mongodb": "^3.3.2",
     "popper": "^1.0.1",
